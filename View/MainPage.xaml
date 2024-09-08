@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VirtualAiSleepMonitor.View.MainPage"
+             Title="Sleep Monitor"
+             BackgroundColor="#2c3e50">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="{StaticResource SecondaryColor}" Offset="0.0" />
+            <GradientStop Color="{StaticResource AccentColor}" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <StackLayout>
+        <!-- Header Section -->
+        <StackLayout Orientation="Horizontal" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Start" 
+                    Margin="0,20,0,0">
+            <Label Text="Sleep Monitor" />
+        </StackLayout>
+
+        <!-- Sleep Data Section -->
+        <StackLayout Orientation="Vertical" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center" 
+                    Margin="20,0,20,0">
+            <Label Text="Sleep Data" />
+            <Label Text="Sleep Quality: 80%" />
+            <Label Text="Sleep Duration: 7 hours 30 minutes" />
+            <Label Text="Wake Up Time: 6:00 AM" />
+        </StackLayout>
+
+        <!-- Sleep Stage Section -->
+        <StackLayout Orientation="Horizontal" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center" 
+                    Margin="20,0,20,0">
+            <Label Text="Sleep Stage" />
+            <BoxView WidthRequest="10" 
+                     HeightRequest="10" 
+                     BackgroundColor="#3498db" 
+                     Margin="10,0,0,0" />
+            <Label Text="Light Sleep" />
+            <BoxView WidthRequest="10" 
+                     HeightRequest="10" 
+                     BackgroundColor="#f1c40f" 
+                     Margin="20,0,0,0" />
+                <Label Text="Deep Sleep" />
+
+                <BoxView WidthRequest="10" 
+                     HeightRequest="10" 
+                     BackgroundColor="#e74c3c" 
+                     Margin="20,0,0,0" />
+                    <Label Text="REM Sleep" />
+
+        </StackLayout>
+
+        <!-- Button Section -->
+        <StackLayout Orientation="Horizontal" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="End" 
+                    Margin="20,0,20,20">
+            <Button Text="Start Tracking" 
+                    
+                    Clicked="Button_Clicked" />
+            <Button Text="View History" 
+                    Margin="20,0,0,0" 
+                    Clicked="View_History"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,68 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VirtualAiSleepMonitor.ViewModels"
+             x:Class="VirtualAiSleepMonitor.View.LoginPage"
+             Title="LoginPage"
+             x:Name="loginPage"
+             >
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="{StaticResource SecondaryColor}" Offset="0.0" />
+            <GradientStop Color="{StaticResource AccentColor}" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <StackLayout
+      VerticalOptions="Center"
+      HorizontalOptions="Center"
+      Spacing="30"
+      Padding="20">
+
+        <!-- Welcome Label -->
+        <Label 
+          Text="Welcome to the Ai Sleep Monitor"
+         
+          HorizontalOptions="Center"
+          VerticalOptions="Center" />
+
+        <!-- Login Form -->
+        <StackLayout Spacing="10">
+            <Entry 
+              Placeholder="Email"
+              Keyboard="Email"
+              ReturnType="Next"
+              HorizontalOptions="Fill" 
+              Margin="0,0,0,10"
+              Text="{Binding Email}"
+              x:Name="emailEntry"/>
+
+            <Entry 
+              Placeholder="Password"
+              IsPassword="True"
+              ReturnType="Done"
+              HorizontalOptions="Fill"
+             
+              Margin="0,0,0,10"
+              Text="{Binding Password}"
+              x:Name="passwordEntry"/>
+
+            <!-- Login Button with Command Binding -->
+            <Button
+              Text="Login"
+              
+              Command="{Binding LoginCommand}"
+              IsVisible="{Binding IsLoginButtonVisible}"
+              x:Name="loginButton"/>
+
+            <!-- Main Page Button with Command Binding -->
+            <Button
+              Text="Main Page"
+            
+              Command="{Binding MainPageCommand}"
+              IsVisible="{Binding IsMainPageButtonVisible}"
+              x:Name="mainPageButton"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
