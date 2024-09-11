@@ -24,7 +24,7 @@
           Text="Welcome to the Ai Sleep Monitor"
          
           HorizontalOptions="Center"
-          VerticalOptions="Center" />
+          VerticalOptions="Center"/>
 
         <!-- Login Form -->
         <StackLayout Spacing="10">
