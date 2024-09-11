@@ -1,5 +1,5 @@
 using Microsoft.Maui.Controls;
-using VirtualAiSleepMonitor.ViewModels;
+using VirtualAiSleepMonitor.ViewModel;
 
 namespace VirtualAiSleepMonitor.View
 {

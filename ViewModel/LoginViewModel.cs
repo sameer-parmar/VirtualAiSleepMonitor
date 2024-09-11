@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-namespace VirtualAiSleepMonitor.ViewModels
+namespace VirtualAiSleepMonitor.ViewModel
 {
     public class LoginViewModel : INotifyPropertyChanged
     {

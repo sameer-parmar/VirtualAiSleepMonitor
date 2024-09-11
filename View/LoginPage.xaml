@@ -1,6 +1,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:VirtualAiSleepMonitor.ViewModels"
+             xmlns:local="clr-namespace:VirtualAiSleepMonitor.ViewModel"
              x:Class="VirtualAiSleepMonitor.View.LoginPage"
              Title="LoginPage"
              x:Name="loginPage"
@@ -24,7 +24,7 @@
           Text="Welcome to the Ai Sleep Monitor"
          
           HorizontalOptions="Center"
-          VerticalOptions="Center" />
+          VerticalOptions="Center"/>
 
         <!-- Login Form -->
         <StackLayout Spacing="10">

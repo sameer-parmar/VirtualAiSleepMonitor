@@ -6,66 +6,91 @@
              BackgroundColor="#2c3e50">
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="{StaticResource SecondaryColor}" Offset="0.0" />
-            <GradientStop Color="{StaticResource AccentColor}" Offset="1.0" />
+            <GradientStop Color="#1c1c1c" Offset="0.0" />
+            <!-- Secondary color -->
+            <GradientStop Color="#2c3e50" Offset="1.0" />
+            <!-- Accent color -->
         </LinearGradientBrush>
     </ContentPage.Background>
-    <StackLayout>
+
+    <StackLayout Padding="20">
         <!-- Header Section -->
-        <StackLayout Orientation="Horizontal" 
-                    HorizontalOptions="Center" 
-                    VerticalOptions="Start" 
-                    Margin="0,20,0,0">
-            <Label Text="Sleep Monitor" />
-        </StackLayout>
+        <Label Text="Sleep Monitor"
+               FontSize="28"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               TextColor="White"
+               FontAttributes="Bold"
+               Margin="0,20,0,20" />
 
         <!-- Sleep Data Section -->
         <StackLayout Orientation="Vertical" 
-                    HorizontalOptions="Center" 
-                    VerticalOptions="Center" 
-                    Margin="20,0,20,0">
-            <Label Text="Sleep Data" />
-            <Label Text="Sleep Quality: 80%" />
-            <Label Text="Sleep Duration: 7 hours 30 minutes" />
-            <Label Text="Wake Up Time: 6:00 AM" />
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Padding="0,10,0,10">
+            <Label Text="Sleep Data"
+                   FontSize="24"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <Label Text="{Binding SleepDurationText}" 
+                   FontSize="18"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
         </StackLayout>
 
         <!-- Sleep Stage Section -->
-        <StackLayout Orientation="Horizontal" 
-                    HorizontalOptions="Center" 
-                    VerticalOptions="Center" 
-                    Margin="20,0,20,0">
-            <Label Text="Sleep Stage" />
-            <BoxView WidthRequest="10" 
-                     HeightRequest="10" 
-                     BackgroundColor="#3498db" 
-                     Margin="10,0,0,0" />
-            <Label Text="Light Sleep" />
-            <BoxView WidthRequest="10" 
-                     HeightRequest="10" 
-                     BackgroundColor="#f1c40f" 
-                     Margin="20,0,0,0" />
-                <Label Text="Deep Sleep" />
+        <StackLayout Orientation="Vertical" 
+                     HorizontalOptions="Center"
+                     Padding="0,10,0,10">
+            <Label Text="Sleep Stage"
+                   FontSize="24"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         Spacing="15">
+                <BoxView WidthRequest="15" HeightRequest="15" BackgroundColor="#3498db"/>
+                <Label Text="Light Sleep" TextColor="White" FontSize="16"/>
 
-                <BoxView WidthRequest="10" 
-                     HeightRequest="10" 
-                     BackgroundColor="#e74c3c" 
-                     Margin="20,0,0,0" />
-                    <Label Text="REM Sleep" />
+                <BoxView WidthRequest="15" HeightRequest="15" BackgroundColor="#f1c40f"/>
+                <Label Text="Deep Sleep" TextColor="White" FontSize="16"/>
 
+                <BoxView WidthRequest="15" HeightRequest="15" BackgroundColor="#e74c3c"/>
+                <Label Text="REM Sleep" TextColor="White" FontSize="16"/>
+            </StackLayout>
+        </StackLayout>
+
+        <!-- Disturbance Information Section -->
+        <StackLayout Orientation="Vertical" 
+                     HorizontalOptions="Center"
+                     Padding="0,10,0,10">
+            <Label Text="Disturbance Info"
+                   FontSize="24"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <Label Text="{Binding DisturbanceInfo}"
+                   FontSize="18"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
         </StackLayout>
 
         <!-- Button Section -->
-        <StackLayout Orientation="Horizontal" 
-                    HorizontalOptions="Center" 
-                    VerticalOptions="End" 
-                    Margin="20,0,20,20">
-            <Button Text="Start Tracking" 
-                    
-                    Clicked="Button_Clicked" />
-            <Button Text="View History" 
-                    Margin="20,0,0,0" 
-                    Clicked="View_History"/>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     VerticalOptions="End"
+                     Padding="0,10,0,10">
+            <Button Text="Start Tracking"
+                    WidthRequest="150"
+                    FontSize="16"
+                    Command="{Binding StartTrackingCommand}"/>
+            <Button Text="Stop Tracking"
+                    WidthRequest="150"
+                    FontSize="16"
+                    Margin="10,0,0,0"
+                    Command="{Binding StopTrackingCommand}"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>
