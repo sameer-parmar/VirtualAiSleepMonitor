@@ -66,6 +66,9 @@
 	  <MauiXaml Update="View\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\SignUp.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionVirtualAiSleepMonitorHideInfoBar="True" /></VisualStudio></ProjectExtensions>

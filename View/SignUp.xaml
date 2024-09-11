@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VirtualAiSleepMonitor.ViewModel"
+             x:Class="VirtualAiSleepMonitor.View.SignUp"
+             Title="SignUp"
+             x:Name="sginPage">
+             <ContentPage.Background>
+                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="{StaticResource SecondaryColor}" Offset="0.0"/>
+                    <GradientStop Color="{StaticResource AccentColor}" Offset="1.0"/>
+                     
+                  </LinearGradientBrush>
+             </ContentPage.Background>
+    <!--First Child-->
+    <StackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Spacing="30"
+        Padding="20">
+        <Label Text="Welcome to the Ai Sleep Monitor"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+        <Label Text="--Please Sign up here--"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+        <!--From here the SignUp Page Started-->
+        <StackLayout Spacing="10">
+             <Entry
+                 Placeholder="UserName"
+                 Keyboard="Chat"
+                 ReturnType="Next"
+                 HorizontalOptions="Fill"
+                 Margin="0,0,0,10"
+                 Text="{Binding UserName}"
+                 x:Name="userNameEntry"/>
+             <Entry
+                 Placeholder="Email"
+                 Keyboard="Email"
+                 ReturnType="Next"
+                 HorizontalOptions="Fill"
+                 Margin="0,0,0,10"
+                 Text="{Binding Email}"
+                 x:Name="emailEntry"/>
+            <Entry 
+                 Placeholder="Password"
+                 IsPassword="True"
+                 ReturnType="Next"
+                 HorizontalOptions="Fill"
+                 Margin="0,0,0,10"
+                 Text="{Binding Password}"
+                 x:Name="passwordEntry"/>
+            <Entry 
+     Placeholder="ReType-Password"
+     IsPassword="True"
+     ReturnType="Done"
+     HorizontalOptions="Fill"
+     Margin="0,0,0,10"
+     Text="{Binding RePassword}"
+     x:Name="passwordEntry2"/>
+            <HorizontalStackLayout 
+                Spacing="10"
+                HorizontalOptions="Center"
+                VerticalOptions="Start">
+                <Button
+                    Text="SignUp"
+                    Command="{Binding signUpCommand}"
+                    x:Name="SignUpButton"
+                    />
+                <Button
+                    Text="Login"
+                    Command="{Binding LoginCommand}"
+                    x:Name="LoginButton"
+    />
+                <!-- IsVisible="{Binding IsLoginButtonVisible}"-->
+            </HorizontalStackLayout>
+
+
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
